@@ -95,11 +95,11 @@ const Home = (props) => {
         />
       </Form.Group>
 
-      <Form.Group controlId="formTimeline">
+      <Form.Group controlId="formProjectTimeline">
         <Form.Label>Project Timeline</Form.Label>
         <Form.Control
           type="text"
-          name="formTimeline"
+          name="formProjectTimeline"
           value={formData.formProjectTimeline}
           onChange={handleChange}
         />
@@ -113,11 +113,11 @@ const Home = (props) => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group controlId="formResources">
+      <Form.Group controlId="formReqResources">
         <Form.Label>Resources Required:</Form.Label>
         <Form.Control
           type="text"
-          name="formResources"
+          name="formReqResources"
           value={formData.formReqResources}
           onChange={handleChange}
         />
