@@ -104,11 +104,11 @@ const Home = (props) => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group controlId="formRolesandRes">
+      <Form.Group controlId="formRolesResponsibility">
         <Form.Label>Roles and Responsibilities:</Form.Label>
         <Form.Control
           type="text"
-          name="formRolesandRes"
+          name="formRolesResponsibility"
           value={formData.formRolesResponsibility}
           onChange={handleChange}
         />
@@ -123,29 +123,29 @@ const Home = (props) => {
         />
       </Form.Group>
 
-      <Form.Group controlId="formBudget">
+      <Form.Group controlId="formBudgetPaymentTerm">
         <Form.Label>Budget and Payment Terms</Form.Label>
         <Form.Control
           type="text"
-          name="formBudget"
+          name="formBudgetPaymentTerm"
           value={formData.formBudgetPaymentTerm}
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group controlId="formStandardsTestReq">
+      <Form.Group controlId="formTestingRequirements">
         <Form.Label>Standards and Testing Requirements</Form.Label>
         <Form.Control
           type="text"
-          name="formStandardsTestReq"
+          name="formTestingRequirements"
           value={formData.formTestingRequirements}
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group controlId="formAcceptance">
+      <Form.Group controlId="formAcceptanceCriteria">
         <Form.Label>Acceptance Criteria:</Form.Label>
         <Form.Control
           type="text"
-          name="formAcceptance"
+          name="formAcceptanceCriteria"
           value={formData.formAcceptanceCriteria}
           onChange={handleChange}
         />
@@ -159,11 +159,11 @@ const Home = (props) => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group controlId="formLegal">
+      <Form.Group controlId="formCompliance">
         <Form.Label> Legal and Regulatory Compliance</Form.Label>
         <Form.Control
           type="text"
-          name="formLegal"
+          name="formCompliance"
           value={formData.formCompliance}
           onChange={handleChange}
         />
@@ -179,21 +179,21 @@ const Home = (props) => {
         />
       </Form.Group>
 
-      <Form.Group controlId="formRisk">
+      <Form.Group controlId="formRiskManagement">
         <Form.Label>Risk Management</Form.Label>
         <Form.Control
           type="text"
-          name="formRisk"
+          name="formRiskManagement"
           value={formData.formRiskManagement}
           onChange={handleChange}
         />
       </Form.Group>
 
-      <Form.Group controlId="formTermination">
+      <Form.Group controlId="formTerminationClause">
         <Form.Label>Termination Clauses</Form.Label>
         <Form.Control
           type="text"
-          name="formTermination"
+          name="formTerminationClause"
           value={formData.formTerminationClause}
           onChange={handleChange}
         />
@@ -207,20 +207,20 @@ const Home = (props) => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group controlId="formContact">
+      <Form.Group controlId="formContactInfo">
         <Form.Label>Contact Information</Form.Label>
         <Form.Control
           type="text"
-          name="formContact"
+          name="formContactInfo"
           value={formData.formContactInfo}
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group controlId="formAppend">
+      <Form.Group controlId="formAppendix">
         <Form.Label>Appendices or Additional Documents</Form.Label>
         <Form.Control
           type="text"
-          name="formAppend"
+          name="formAppendix"
           value={formData.formAppendix}
           onChange={handleChange}
         />
