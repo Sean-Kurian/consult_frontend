@@ -30,29 +30,27 @@ function SowScreen(props) {
     setInputAreaValues([...inputAreaValues, { label: newLabel, value: "" }]);
   };
 
-  const handleInputChange = (index, event) => {
-    const newInputAreaValues = [...inputAreaValues];
-    newInputAreaValues[index] = {
-      label: newInputAreaValues[index].label,
-      value: event.target.value,
-    };
-    setInputAreaValues(newInputAreaValues);
-  };
-
   const [organization, setOrganization] = useState("");
-  const [clientName, setClientName] = useState("");
+  const [client, setClientName] = useState("");
+  const [confidentiality, setConfidentiality] = useState("");
+  const [projectScope, setProjectScope] = useState("");
+  const [projectSolution, setProjectSolution] = useState("");
+  const [payment, setPayment] = useState("");
+  const [additonalInfo, setAdditionalInfo] = useState("");
   const [inputAreaValues, setInputAreaValues] = useState(
     inputAreas.map((inputArea) => ({ label: inputArea.label, value: "" }))
   );
 
-  const removeInputArea = (indexToRemove) => {
-    setInputAreas(inputAreas.filter((_, index) => index !== indexToRemove));
-  };
-
   const generateDocument = async () => {
+    console.log(inputAreaValues);
     const requestBody = {
-      organization,
-      client: clientName,
+      organization: organization,
+      client: client,
+      confidentiality: confidentiality,
+      projectScope: projectScope,
+      projectSolution: projectSolution,
+      payment: payment,
+      additonalInfo: additonalInfo,
       ...inputAreaValues.reduce(
         (obj, item) => ({ ...obj, [item.label]: item.value }),
         {}
@@ -119,33 +117,31 @@ function SowScreen(props) {
                 />
               </div>
             </div>
-            {inputAreas.map((inputArea, index) => (
-              <div key={index} className="input-area">
-                <ClientInputArea
-                  label={inputArea.label}
-                  placeholder={inputArea.placeholder}
-                  onChange={(e) => {
-                    const newValue = e.target.value;
-                    setInputAreaValues((prevValues) =>
-                      prevValues.map((item, idx) =>
-                        idx === index ? { ...item, value: newValue } : item
-                      )
-                    );
-                  }}
-                />
-                <div className="button-container">
-                  <button
-                    className="remove-button"
-                    onClick={() => removeInputArea(index)}
-                  >
-                    -
-                  </button>
-                </div>
-              </div>
-            ))}
-            <button className="add-button" onClick={addInputArea}>
-              +
-            </button>{" "}
+            <ClientInputArea
+              label="Confidentiality"
+              placeholder="Do you have any confidentiality agreements? What areas of the project do they apply to?"
+              onChange={(e) => setConfidentiality(e.target.value)}
+            />
+            <ClientInputArea
+              label="Project Scope & Objectives"
+              placeholder="What are you trying to achieve? What are the goals of the project?"
+              onChange={(e) => setProjectScope(e.target.value)}
+            />
+            <ClientInputArea
+              label="Solution Overview"
+              placeholder="How do you intend to solve the problem? What are the key features of the solution?"
+              onChange={(e) => setProjectSolution(e.target.value)}
+            />
+            <ClientInputArea
+              label="Payment"
+              placeholder="What is the payment schedule? What are the payment terms? What is the payment method?"
+              onChange={(e) => setPayment(e.target.value)}
+            />
+            <ClientInputArea
+              label="Additional Information"
+              placeholder="What else should we know about the project? Is there any more information that is important for a statement of work?"
+              onChange={(e) => setAdditionalInfo(e.target.value)}
+            />
           </div>
           <button className="div-18" onClick={generateDocument}>
             Generate Document

@@ -34,13 +34,13 @@ function ClientInputArea({ label, placeholder, onChange }) {
   const handleLabelChange = (event) => {
     const newLabel = event.target.innerText;
     setEditableLabel(newLabel);
-    onChange({ target: { value: newLabel } });
+    onChange({ target: { label: newLabel, value: textareaValue } });
   };
 
   const handleTextareaChange = (event) => {
     const newValue = event.target.value;
     setTextareaValue(newValue);
-    onChange({ target: { value: newValue } });
+    onChange({ target: { label: editableLabel, value: newValue } });
   };
 
   return (
