@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const labelStyle = {
   color: "#170f49",
@@ -23,36 +23,21 @@ const textareaStyle = {
   justifyContent: "center",
   alignItems: "start",
   margin: "21px 0 0 18px",
+  resize: "none",
   padding: "25px 60px 25px 21px",
   font: "400 18px/111% DM Sans, -apple-system, Roboto, Helvetica, sans-serif",
 };
+const ClientInputArea = ({ label, placeholder, onChange }) => {
+  const [textareaValue, setTextareaValue] = useState("");
 
-function ClientInputArea({ label, placeholder, onChange }) {
-  const [editableLabel, setEditableLabel] = React.useState(label);
-  const [textareaValue, setTextareaValue] = React.useState("");
-
-  const handleLabelChange = (event) => {
-    const newLabel = event.target.innerText;
-    setEditableLabel(newLabel);
-    onChange({ target: { label: newLabel, value: textareaValue } });
-  };
-
-  const handleTextareaChange = (event) => {
-    const newValue = event.target.value;
-    setTextareaValue(newValue);
-    onChange({ target: { label: editableLabel, value: newValue } });
+  const handleTextareaChange = (e) => {
+    setTextareaValue(e.target.value);
+    onChange({ target: { label: label, value: e.target.value } });
   };
 
   return (
     <>
-      <div
-        style={labelStyle}
-        contentEditable
-        suppressContentEditableWarning
-        onBlur={handleLabelChange}
-      >
-        {editableLabel}
-      </div>
+      <div style={labelStyle}>{label}</div>
       <textarea
         style={textareaStyle}
         placeholder={placeholder}
@@ -62,5 +47,5 @@ function ClientInputArea({ label, placeholder, onChange }) {
       />
     </>
   );
-}
+};
 export default ClientInputArea;

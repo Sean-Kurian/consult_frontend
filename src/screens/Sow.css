@@ -177,18 +177,20 @@
 
 .div-18 {
   position: relative;
-  color: #fff;
+  color: var(--Neutral-800, #170f49);
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
   white-space: nowrap;
   justify-content: center;
   border-radius: 56px;
-  background: linear-gradient(180deg, #9e96f2 0%, #ec31f0 100%);
-  box-shadow: 0px 3px 12px 0px rgba(74, 58, 255, 0.18);
+  background-color: #e6e8fa; /* Light blue that complements the rest of the screen */
+  box-shadow: 0px 12px 24px 0px rgba(20, 20, 43, 0.04),
+    0px -2px 4px 0px rgba(20, 20, 43, 0.02),
+    0px 3px 14px 0px rgba(74, 58, 255, 0.03);
   align-self: center;
   margin: 48px 0 145px;
   padding: 21px 40px;
-  font: 700 24px/83% Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 700 24px/83% DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
 }
 @media (max-width: 991px) {
   .div-18 {

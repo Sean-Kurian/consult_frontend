@@ -1,33 +1,45 @@
 import React, { useState } from "react";
 import "./Sow.css";
 import ClientInputArea from "../components/clientInputArea";
+import DialogBox from "../components/dialogBox";
 
 function SowScreen(props) {
-  const [inputAreas, setInputAreas] = React.useState([
-    {
-      label: "Confidentiality",
-      placeholder:
-        "Do you have any confidentiality agreements? What areas of the project do they apply to?",
-    },
-    {
-      label: "Project Scope & Objectives",
-      placeholder:
-        "What are you trying to achieve? What are the goals of the project?",
-    },
-  ]);
+  const [inputAreas, setInputAreas] = React.useState([]);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
-  const addInputArea = () => {
-    const newLabel = "Edit this label with a section name";
+  const addInputArea = (newLabel) => {
+    const id = Math.random().toString(); // generate a unique id
     setInputAreas([
       ...inputAreas,
       {
+        id: id,
         label: newLabel,
         placeholder:
           "Add any information you have about what this section should include",
       },
     ]);
 
-    setInputAreaValues([...inputAreaValues, { label: newLabel, value: "" }]);
+    setInputAreaValues([
+      ...inputAreaValues,
+      { id: id, label: newLabel, value: "" },
+    ]);
+  };
+
+  const removeInputArea = (id) => {
+    setInputAreas((prevInputAreas) =>
+      prevInputAreas.filter((item) => item.id !== id)
+    );
+    setInputAreaValues((prevInputAreaValues) =>
+      prevInputAreaValues.filter((item) => item.id !== id)
+    );
+  };
+
+  const handleInputChange = (id, value) => {
+    setInputAreaValues(
+      inputAreaValues.map((item) =>
+        item.id === id ? { ...item, value: value } : item
+      )
+    );
   };
 
   const [organization, setOrganization] = useState("");
@@ -42,6 +54,7 @@ function SowScreen(props) {
   );
 
   const generateDocument = async () => {
+    console.log(inputAreas);
     console.log(inputAreaValues);
     const requestBody = {
       organization: organization,
@@ -141,6 +154,29 @@ function SowScreen(props) {
               label="Additional Information"
               placeholder="What else should we know about the project? Is there any more information that is important for a statement of work?"
               onChange={(e) => setAdditionalInfo(e.target.value)}
+            />
+            {inputAreas.map((inputArea) => (
+              <div key={inputArea.id}>
+                <ClientInputArea
+                  label={inputArea.label}
+                  placeholder={inputArea.placeholder}
+                  onChange={(e) =>
+                    handleInputChange(inputArea.id, e.target.value)
+                  }
+                />
+                <button onClick={() => removeInputArea(inputArea.id)}>
+                  Remove
+                </button>
+              </div>
+            ))}
+            <button onClick={() => setDialogOpen(true)}>Add Section</button>
+            <DialogBox
+              isOpen={dialogOpen}
+              onClose={() => setDialogOpen(false)}
+              onConfirm={(newLabel) => {
+                addInputArea(newLabel);
+                setDialogOpen(false);
+              }}
             />
           </div>
           <button className="div-18" onClick={generateDocument}>
