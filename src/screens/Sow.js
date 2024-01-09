@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import "./Sow.css";
 import ClientInputArea from "../components/clientInputArea";
 import DialogBox from "../components/dialogBox";
+import { useAuth } from '../context/AuthContext.js';
 
-function SowScreen(props) {
+function SowScreen() {
+  const { authToken, login, logout } = useAuth();
+
   const [inputAreas, setInputAreas] = React.useState([]);
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -87,7 +90,8 @@ function SowScreen(props) {
     const data = await response.json();
   };
 
-  return (
+  return ( // TODO: look into verifying the token in the future for pages that we absolutely want to hide.
+    authToken ? (
     <>
       <div className="div">
         <div className="div-2">
@@ -178,6 +182,10 @@ function SowScreen(props) {
         </div>
       </div>
     </>
+    ) :
+    (
+      <p>You aren't authorized to see this page.</p>
+    )
   );
 }
 
