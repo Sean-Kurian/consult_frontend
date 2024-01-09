@@ -72,26 +72,19 @@ function SowScreen(props) {
 
     console.log(requestBody);
 
-    // Comment out the fetch call for now
-    /*
-  const response = await fetch(
-    "http://your-backend-url.com/generate-document",
-    {
+    const response = await fetch("http://localhost:5000/sow", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(requestBody),
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
-  );
 
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-
-  const data = await response.json();
-  // Do something with the response data
-  */
+    const data = await response.json();
   };
 
   return (
