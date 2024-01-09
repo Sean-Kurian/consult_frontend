@@ -1,5 +1,5 @@
 .div {
-  background-color: var(--Neutral-100, #fff);
+  background-color: var(--Neutral-100, #dfd5ec);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,13 +37,14 @@
   box-shadow: 0px 12px 24px 0px rgba(20, 20, 43, 0.04),
     0px -2px 4px 0px rgba(20, 20, 43, 0.02),
     0px 3px 14px 0px rgba(74, 58, 255, 0.03);
-  background-color: var(--Neutral-100, #fff);
+  background-color: var(--Neutral-100, #eff0f6);
   align-self: stretch;
   justify-content: center;
   align-items: center;
   margin: 0 19px;
   padding: 43px 60px;
-  font: 700 24px/146% DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 700 24px/146% Arial, DM Sans, -apple-system, Roboto, Helvetica,
+    sans-serif;
 }
 @media (max-width: 991px) {
   .div-3 {
@@ -60,7 +61,8 @@
   font-feature-settings: "clig" off, "liga" off;
   align-self: center;
   margin-top: 121px;
-  font: 700 34px/135% DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 700 34px/135% Arial, DM Sans, -apple-system, Roboto, Helvetica,
+    sans-serif;
 }
 @media (max-width: 991px) {
   .div-4 {
@@ -75,7 +77,8 @@
   align-self: center;
   margin-top: 24px;
   max-width: 497px;
-  font: 500 18px/30px DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 500 18px/30px Arial, DM Sans, -apple-system, Roboto, Helvetica,
+    sans-serif;
 }
 @media (max-width: 991px) {
   .div-5 {
@@ -108,7 +111,8 @@
   align-self: start;
   margin-left: 18px;
   white-space: nowrap;
-  font: 700 24px/146% DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 700 24px/146% Arial, DM Sans, -apple-system, Roboto, Helvetica,
+    sans-serif;
 }
 @media (max-width: 991px) {
   .div-7 {
@@ -136,7 +140,8 @@
   align-self: start;
   white-space: nowrap;
   margin: 51px 0 0 18px;
-  font: 500 18px/111% DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 500 18px/111% Arial, DM Sans, -apple-system, Roboto, Helvetica,
+    sans-serif;
   text-align: center;
 }
 
@@ -163,7 +168,8 @@
   align-items: start;
   margin: 22px 0 0 18px;
   padding: 27px 60px 27px 20px;
-  font: 400 18px/111% DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 18px/111% Arial, DM Sans, -apple-system, Roboto, Helvetica,
+    sans-serif;
 }
 
 @media (max-width: 991px) {
@@ -177,21 +183,28 @@
 
 .div-18 {
   position: relative;
-  color: var(--Neutral-800, #170f49);
+  color: var(--Neutral-800, #ffffff);
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
   white-space: nowrap;
   justify-content: center;
   border-radius: 56px;
-  background-color: #e6e8fa; /* Light blue that complements the rest of the screen */
-  box-shadow: 0px 12px 24px 0px rgba(20, 20, 43, 0.04),
-    0px -2px 4px 0px rgba(20, 20, 43, 0.02),
-    0px 3px 14px 0px rgba(74, 58, 255, 0.03);
+  background-color: #6750a4; /* Light blue that complements the rest of the screen */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a box-shadow */
+  transition: box-shadow 0.3s ease; /* Add a transition for the hover effect */
+  transition: box-shadow 0.3s ease; /* Add a transition for the hover effect */
   align-self: center;
   margin: 48px 0 145px;
   padding: 21px 40px;
-  font: 700 24px/83% DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 700 24px/83% Arial, DM Sans, -apple-system, Roboto, Helvetica,
+    sans-serif;
+  border: none;
 }
+
+.div-18:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25); /* Increase vertical offset and blur radius on hover */
+}
+
 @media (max-width: 991px) {
   .div-18 {
     white-space: initial;
@@ -248,4 +261,52 @@
 
 .button-container {
   text-align: right;
+}
+
+.addSection {
+  /* ...existing styles... */
+  background-color: #e8def8; /* Green background */
+  border: none; /* Remove border */
+  color: rgb(0, 0, 0); /* White text */
+  padding: 15px 32px; /* Padding to increase size */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a box-shadow */
+
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 56px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+  margin-bottom: 20px; /* Add right margin to .addSection */
+}
+
+.addSection:hover {
+  background-color: #b59ecf; /* Darken background color on hover */
+}
+
+.removeSection {
+  /* ...existing styles... */
+  background-color: #e8def8; /* Green background */
+  border: none; /* Remove border */
+  color: rgb(0, 0, 0); /* White text */
+  padding: 15px 32px; /* Padding to increase size */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a box-shadow */
+
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 56px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+  margin-top: 10px; /* Add right margin to .addSection */
+
+  margin-bottom: 40px; /* Add right margin to .addSection */
+  float: right;
+}
+
+.removeSection:hover {
+  background-color: #b59ecf; /* Darken background color on hover */
 }

@@ -98,11 +98,6 @@ function SowScreen(props) {
     <>
       <div className="div">
         <div className="div-2">
-          <img
-            loading="lazy"
-            srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/183e25d8162ffa8893ba4dc49046d8e11412b832882b2086f55a591afcc0d400?apiKey=85571368d2fa463cbdd75fd333f2187e&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/183e25d8162ffa8893ba4dc49046d8e11412b832882b2086f55a591afcc0d400?apiKey=85571368d2fa463cbdd75fd333f2187e&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/183e25d8162ffa8893ba4dc49046d8e11412b832882b2086f55a591afcc0d400?apiKey=85571368d2fa463cbdd75fd333f2187e&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/183e25d8162ffa8893ba4dc49046d8e11412b832882b2086f55a591afcc0d400?apiKey=85571368d2fa463cbdd75fd333f2187e&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/183e25d8162ffa8893ba4dc49046d8e11412b832882b2086f55a591afcc0d400?apiKey=85571368d2fa463cbdd75fd333f2187e&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/183e25d8162ffa8893ba4dc49046d8e11412b832882b2086f55a591afcc0d400?apiKey=85571368d2fa463cbdd75fd333f2187e&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/183e25d8162ffa8893ba4dc49046d8e11412b832882b2086f55a591afcc0d400?apiKey=85571368d2fa463cbdd75fd333f2187e&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/183e25d8162ffa8893ba4dc49046d8e11412b832882b2086f55a591afcc0d400?apiKey=85571368d2fa463cbdd75fd333f2187e&"
-            className="img"
-          />
           <div className="div-3">Generate a Statement of Work</div>
           <div className="div-4">Tell us about your project</div>
           <div className="div-5">
@@ -164,12 +159,17 @@ function SowScreen(props) {
                     handleInputChange(inputArea.id, e.target.value)
                   }
                 />
-                <button onClick={() => removeInputArea(inputArea.id)}>
+                <button
+                  className="removeSection"
+                  onClick={() => removeInputArea(inputArea.id)}
+                >
                   Remove
                 </button>
               </div>
             ))}
-            <button onClick={() => setDialogOpen(true)}>Add Section</button>
+            <button className="addSection" onClick={() => setDialogOpen(true)}>
+              Add Section
+            </button>
             <DialogBox
               isOpen={dialogOpen}
               onClose={() => setDialogOpen(false)}

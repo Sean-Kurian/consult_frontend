@@ -10,16 +10,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Arial", sans-serif; /* Use a modern font */
+  font-family: "Arial", "Liberation Sans", sans-serif;
 }
 
 .dialog-box {
-  background: white;
+  background: #ece6f0;
   padding: 20px;
   border-radius: 10px;
   width: 80%;
   max-width: 500px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  font-family: "Helvetica", "Arial", "Liberation Sans", sans-serif;
+  font: Arial, DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.dialog-box h2 {
+  font-family: "Helvetica", "Arial", "Liberation Sans", sans-serif;
+  font-weight: normal;
 }
 
 .dialog-input {
@@ -39,7 +46,7 @@
 .dialog-button {
   padding: 10px 20px;
   border: none;
-  background: #007bff;
+  background: #6750a4;
   color: white;
   cursor: pointer;
   margin-left: 10px;
