@@ -16,9 +16,10 @@ function DialogBox({ isOpen, onClose, onConfirm }) {
   return (
     <div className="dialog-overlay">
       <div className="dialog-box">
-        <h2>Enter the name for the new section</h2>
+        <h2>Enter section name</h2>
         <input
           className="dialog-input"
+          type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
@@ -26,7 +27,10 @@ function DialogBox({ isOpen, onClose, onConfirm }) {
           <button className="dialog-button" onClick={handleConfirm}>
             OK
           </button>
-          <button className="dialog-button" onClick={onClose}>
+          <button
+            className="dialog-button dialog-button-secondary"
+            onClick={onClose}
+          >
             Cancel
           </button>
         </div>

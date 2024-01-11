@@ -6,36 +6,40 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker to focus on the dialog */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Arial", "Liberation Sans", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
 }
 
 .dialog-box {
-  background: #ece6f0;
-  padding: 20px;
-  border-radius: 10px;
+  background: #ece6f0; /* Keeping the unique color scheme */
+  padding: 30px;
+  border-radius: 12px; /* More rounded corners for a modern look */
   width: 80%;
-  max-width: 500px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  font-family: "Helvetica", "Arial", "Liberation Sans", sans-serif;
-  font: Arial, DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  max-width: 400px; /* Slightly smaller width for a compact look */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
 }
 
 .dialog-box h2 {
-  font-family: "Helvetica", "Arial", "Liberation Sans", sans-serif;
-  font-weight: normal;
+  font-size: 20px; /* Increased font size for prominence */
+  color: #333; /* Darker color for better readability */
+  margin-bottom: 15px; /* More space below the title */
+  font-weight: 500; /* Medium weight for clarity */
 }
 
 .dialog-input {
-  width: 75%;
-  padding: 10px;
-  margin: 10px 0;
+  width: 100%; /* Full width for a streamlined look */
+  padding: 12px;
+  margin-bottom: 20px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  height: 2dvb; /* Make the input box shorter */
+  border-radius: 8px; /* More rounded for a modern feel */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inset shadow for depth */
+  font-size: 16px; /* Larger font size for easier reading */
 }
 
 .dialog-buttons {
@@ -46,14 +50,16 @@
 .dialog-button {
   padding: 10px 20px;
   border: none;
-  background: #6750a4;
+  background: #6750a4; /* Original purple color */
   color: white;
   cursor: pointer;
   margin-left: 10px;
-  border-radius: 5px;
-  transition: background 0.3s; /* Add a transition for the hover effect */
+  border-radius: 6px; /* Slightly more rounded */
+  transition: all 0.3s ease; /* Smooth transition for background and box-shadow */
+  font-weight: 500; /* Medium weight for a bold look */
 }
 
 .dialog-button:hover {
-  background: #0056b3;
+  background: #5e4690; /* Slightly darker shade on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth on hover */
 }
