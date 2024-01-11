@@ -95,9 +95,9 @@ function SowScreen() {
     // TODO: look into verifying the token in the future for pages that we absolutely want to hide.
     authToken ? (
       <>
-        <LogoutButton />
         <div className="div">
           <div className="div-2">
+            <LogoutButton />
             <div className="div-3">Generate a Statement of Work</div>
             <div className="div-4">Tell us about your project</div>
             <div className="div-5">
