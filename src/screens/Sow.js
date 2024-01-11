@@ -96,7 +96,6 @@ function SowScreen() {
     authToken ? (
       <>
         <LogoutButton />
-
         <div className="div">
           <div className="div-2">
             <div className="div-3">Generate a Statement of Work</div>
