@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext.js';
 import axios from 'axios';
 
 function FileList() {
-    const { authToken, login, logout } = useAuth();
+    const { authToken, username } = useAuth();
     const [files, setFiles] = useState([]);
     const [fileNames, setFileNames] = useState([]);
     const [valid, setValid] = useState(false);
@@ -20,7 +20,7 @@ function FileList() {
         try {
             const headers = {
                 'Authorization': authToken
-            }
+            };
             const result = await axios.get(process.env.REACT_APP_BACKEND_URL + "/file/get", { headers });
             if ( result.data.success ) {
                 setValid(true);
@@ -52,7 +52,7 @@ function FileList() {
 
     return (valid ? (
         <div>
-        <h1>List of files</h1>
+        <h1>List of {username}'s files</h1>
             <ul>
                 {
                     files.map((url, i) => (

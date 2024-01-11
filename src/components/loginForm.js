@@ -25,7 +25,7 @@ function LoginForm() {
       })
       .then((result) => {
         if (result.data.success) {
-          login(result.headers.get("Authorization"));
+          login(result.headers.get("Authorization"), result.data.username);
           navigate("/sow");
         } else {
           setShowFailed(true);
