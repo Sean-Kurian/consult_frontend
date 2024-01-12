@@ -80,10 +80,23 @@ function SowScreen() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": authToken
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk5ZjkwN2RjY2MxN2M3YmE2YWU0MWMiLCJpYXQiOjE3MDQ5NDIwOTMsImV4cCI6MTcwNTU0Njg5M30.195pYGVuuoF8f_jaPbZawgxchmVdxQij7mMtJCR39Zw", // Add the bearer token here
       },
       body: JSON.stringify(requestBody),
     });
+    const blob = await response.blob();
+
+    // Create a temporary anchor element
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+
+    // Set the download attribute and trigger a click
+    link.download = "sow.docx";
+    link.click();
+
+    // Cleanup
+    window.URL.revokeObjectURL(link.href);
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
