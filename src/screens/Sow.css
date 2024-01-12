@@ -203,7 +203,20 @@
 
 .div-18:hover {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25); /* Increase vertical offset and blur radius on hover */
+  cursor: pointer;
 }
+
+.div-18:active {
+  border-width: 4px 0 0;
+  background-color: #796c9d;
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+
+
+
 
 @media (max-width: 991px) {
   .div-18 {
