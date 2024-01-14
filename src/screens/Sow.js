@@ -76,7 +76,7 @@ function SowScreen() {
 
     console.log(requestBody);
 
-    const response = await fetch("http://localhost:5000/sow", {
+    const response = await fetch("http://3.130.6.61:5000/sow", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
